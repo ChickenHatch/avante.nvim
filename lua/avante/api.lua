@@ -58,7 +58,7 @@ function M.build(opts)
   local cmd
   local os_name = Utils.get_os_name()
 
-  if vim.tbl_contains({ "linux", "darwin" }, os_name) then
+  if vim.tbl_contains({ "linux", "openbsd", "darwin" }, os_name) then
     cmd = {
       "sh",
       "-c",

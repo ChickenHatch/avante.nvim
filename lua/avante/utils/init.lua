@@ -41,11 +41,13 @@ function M.is_win() return M.path.is_win() end
 
 M.path_sep = M.path.SEP
 
----@return "linux" | "darwin" | "windows"
+---@return "linux" | "OpenBSD" | "darwin" | "windows"
 function M.get_os_name()
   local os_name = vim.uv.os_uname().sysname
   if os_name == "Linux" then
     return "linux"
+  elseif os_name == "OpenBSD" then
+    return "openbsd"
   elseif os_name == "Darwin" then
     return "darwin"
   elseif os_name == "Windows_NT" then

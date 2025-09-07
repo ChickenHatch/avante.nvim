@@ -105,7 +105,7 @@ function H.get_oauth_token()
 
   if xdg_config and vim.fn.isdirectory(xdg_config) > 0 then
     config_dir = xdg_config
-  elseif vim.tbl_contains({ "linux", "darwin" }, os_name) then
+  elseif vim.tbl_contains({ "linux", "darwin", "openbsd" }, os_name) then
     config_dir = vim.fn.expand("~/.config")
   else
     config_dir = vim.fn.expand("~/AppData/Local")

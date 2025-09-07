@@ -57,7 +57,7 @@ function M.get_base64_content(filepath)
   local os_mapping = Utils.get_os_name()
   ---@type vim.SystemCompleted
   local output
-  if os_mapping == "darwin" or os_mapping == "linux" then
+  if os_mapping == "darwin" or os_mapping == "linux" or os_mapping == "openbsd" then
     output = Utils.shell_run(("cat %s | base64 | tr -d '\n'"):format(filepath))
   else
     output =
