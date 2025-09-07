@@ -7,6 +7,9 @@ ifeq ($(UNAME), Linux)
 else ifeq ($(UNAME), Darwin)
 	OS := macOS
 	EXT := dylib
+else ifeq ($(UNAME), OpenBSD)
+	OS := openbsd
+	EXT := so
 else
 	$(error Unsupported operating system: $(UNAME))
 endif
